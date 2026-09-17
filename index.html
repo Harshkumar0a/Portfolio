@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main> :first-child {
+        margin-top: 0 !important;
+      }
+
+      main> :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "outline-variant": "#4d4354", "on-primary-fixed": "#2c0051", "surface-container-high": "#282a30", "on-surface": "#e2e2ea", "secondary-fixed": "#c4e7ff", "on-error": "#690005", "secondary-fixed-dim": "#7bd0ff", "primary-fixed": "#f0dbff", "tertiary-fixed-dim": "#ddb8ff", "tertiary-fixed": "#f0dbff", "on-secondary-container": "#00374d", "primary-fixed-dim": "#ddb7ff", "surface-dim": "#111319", "on-primary": "#490080", "on-tertiary-fixed": "#2c0051", "surface-container-low": "#191c21", "on-primary-fixed-variant": "#6900b3", "tertiary": "#ddb8ff", "surface-variant": "#33353b", "error-container": "#93000a", "on-secondary-fixed-variant": "#004c69", "on-tertiary-container": "#400071", "on-tertiary-fixed-variant": "#62259b", "tertiary-container": "#b175ec", "inverse-surface": "#e2e2ea", "on-surface-variant": "#cfc2d6", "surface-container": "#1d2025", "on-error-container": "#ffdad6", "surface-bright": "#37393f", "inverse-on-surface": "#2e3036", "surface-tint": "#ddb7ff", "error": "#ffb4ab", "on-background": "#e2e2ea", "on-tertiary": "#490081", "secondary": "#7bd0ff", "surface-container-lowest": "#0c0e13", "primary-container": "#b76dff", "on-primary-container": "#400071", "surface-container-highest": "#33353b", "on-secondary-fixed": "#001e2c", "outline": "#988d9f", "secondary-container": "#00a6e0", "primary": "#ddb7ff", "on-secondary": "#00354a", "surface": "#111319", "background": "#111319", "inverse-primary": "#842bd2" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-xl": "2.5rem", "space-md": "1rem", "space-lg": "1.5rem", "gutter-mobile": "1rem", "margin-mobile": "1.25rem", "space-xs": "0.25rem", "gutter": "1.5rem", "margin": "3rem" }, fontFamily: { "headline-lg-mobile": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "code-badge": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "code-snippet": ["JetBrains Mono"], "label-caps": ["JetBrains Mono"] }, fontSize: { "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }], "display-hero": ["64px", { lineHeight: "72px", fontWeight: "800" }], "code-badge": ["12px", { lineHeight: "16px", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }], "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }], "display-hero-mobile": ["38px", { lineHeight: "44px", fontWeight: "800" }], "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "26px", fontWeight: "600" }], "headline-lg": ["40px", { lineHeight: "48px", fontWeight: "700" }], "code-snippet": ["13px", { lineHeight: "20px", fontWeight: "400" }], "label-caps": ["11px", { lineHeight: "14px", fontWeight: "600" }] } } } };</script>
+</head>
+
+<body
+  class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+  <header class="fixed top-0 inset-x-0 z-50 flex items-center justify-center p-space-md pointer-events-none">
+    <div
+      class="pointer-events-auto h-16 w-full max-w-7xl mx-auto px-space-md flex items-center justify-between rounded-full bg-surface-container-low/60 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+      <div class="flex items-center gap-space-md"><a class="group flex items-center gap-space-sm pl-space-xs"
+          data-path="about" href="#about">
+          <div
+            class="w-9 h-9 rounded-full shadow-[0_0_16px_rgba(221,183,255,0.4)] transition-transform duration-300 group-hover:scale-105 overflow-hidden border-[1.5px] border-primary">
+            <img src="profile.jpeg" alt="Harsh Kumar" class="w-full h-full object-cover" />
+          </div>
+          <div class="hidden sm:flex flex-col text-left"><span
+              class="font-headline-sm text-headline-sm leading-none text-on-surface tracking-tight group-hover:text-primary transition-colors">Harsh
+              Kumar</span><span class="font-code-badge text-code-badge text-on-surface-variant">Full-Stack
+              Architect</span></div>
+        </a>
+        <div
+          class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-highest/40 border border-white/5 backdrop-blur-md">
+          <span class="relative flex h-2 w-2"><span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span
+              class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span
+            class="font-code-badge text-code-badge text-secondary font-medium tracking-tight">Available for
+            opportunities</span>
+        </div>
+      </div>
+      <nav
+        class="hidden md:flex items-center gap-1 p-1 rounded-full bg-surface-container-lowest/50 border border-white/5"
+        data-active-classes="bg-surface-variant text-primary font-bold shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
+        <a aria-current="page"
+          class="px-space-md py-1.5 rounded-full transition-all duration-200 bg-surface-variant text-primary font-bold shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
+          data-path="about" href="#about">About</a><a
+          class="px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 font-body-md text-body-md"
+          data-path="skills" href="#skills">Skills</a><a
+          class="px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 font-body-md text-body-md"
+          data-path="projects" href="#projects">Projects</a><a
+          class="px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 font-body-md text-body-md"
+          data-path="content" href="#content">Content</a><a
+          class="px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all duration-200 font-body-md text-body-md"
+          data-path="contact" href="#contact">Contact</a>
+      </nav>
+      <div class="flex items-center gap-space-sm"><a
+          class="group relative inline-flex items-center gap-space-xs px-space-md py-2 rounded-full bg-gradient-to-r from-primary-container to-secondary-container text-on-primary font-headline-sm text-body-md shadow-[0_0_20px_rgba(183,109,255,0.35)] transition-all duration-300 hover:shadow-[0_0_28px_rgba(123,208,255,0.5)] hover:scale-[1.02] active:scale-[0.98]"
+          href="Harsh_Kumar_Resume.pdf" download="Harsh_Kumar_Resume.pdf"><span
+            class="material-symbols-outlined text-[18px] text-on-primary transition-transform group-hover:translate-y-0.5">download</span><span
+            class="hidden sm:inline font-semibold text-on-primary">Resume</span></a>
+        <div
+          class="w-8 h-8 rounded-full flex items-center justify-center ring-2 ring-white/10 shrink-0 overflow-hidden">
+          <img src="profile.jpeg" alt="Harsh Kumar" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="w-full pt-16 flex-1 bg-background relative z-10">
+    <div class="flex flex-col w-full">
+      <style>
+        @keyframes floatSlow {
+
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+
+          50% {
+            transform: translateY(-10px) rotate(0.5deg);
+          }
+        }
+
+        @keyframes floatReverse {
+
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+
+          50% {
+            transform: translateY(8px) rotate(-0.5deg);
+          }
+        }
+
+        @keyframes pulseGlow {
+
+          0%,
+          100% {
+            opacity: 0.35;
+            filter: blur(30px);
+          }
+
+          50% {
+            opacity: 0.65;
+            filter: blur(45px);
+          }
+        }
+
+        .anim-float-slow {
+          animation: floatSlow 7s ease-in-out infinite;
+        }
+
+        .anim-float-rev {
+          animation: floatReverse 6s ease-in-out infinite;
+        }
+
+        .anim-pulse-glow {
+          animation: pulseGlow 5s ease-in-out infinite;
+        }
+
+        .glass-card {
+          background: rgba(17, 19, 25, 0.72);
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+          box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.65), 0 0 20px -2px rgba(183, 109, 255, 0.08);
+        }
+
+        .glass-card:hover {
+          box-shadow: 0 24px 50px -8px rgba(0, 0, 0, 0.8), 0 0 32px 0 rgba(123, 208, 255, 0.2);
+        }
+      </style>
+      <!-- ==================== 00 // HERO SECTION ==================== -->
+      <section
+        class="relative w-full min-h-[921px] flex flex-col justify-center items-center px-space-gutter py-space-xl overflow-hidden -mt-16 pt-28">
+        <!-- Ambient 3D Cosmic Canvas Layer -->
+        <!-- STITCH_THREEJS_START:ANIMATION_1 class="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-85" -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-85" style="display:block;">
+          <script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+          <div id="threejs-container-ANIMATION_1" style="width:100%;height:100%"></div>
+          <script>
+            (function () {
+              const container = document.getElementById('threejs-container-ANIMATION_1');
+              const devicePixelRatio = window.devicePixelRatio || 1;
+              const scene = new THREE.Scene();
+              const width = container.clientWidth || window.innerWidth;
+              const height = container.clientHeight || window.innerHeight;
+
+              const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+              camera.position.z = 24;
+
+              const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+              renderer.setSize(width, height);
+              renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+              container.appendChild(renderer.domElement);
+
+              // Ambient light with neon tint
+              const ambientLight = new THREE.AmbientLight(0x8b5cf6, 1.2);
+              scene.add(ambientLight);
+
+              // Point lights for electric blue and purple highlights
+              const purpleLight = new THREE.PointLight(0xa855f7, 3, 50);
+              purpleLight.position.set(10, 10, 10);
+              scene.add(purpleLight);
+
+              const blueLight = new THREE.PointLight(0x38bdf8, 3.5, 50);
+              blueLight.position.set(-10, -8, 12);
+              scene.add(blueLight);
+
+              // Floating Group of Abstract Anti-Gravity Geometries
+              const group = new THREE.Group();
+              scene.add(group);
+
+              // Central Icosahedron Wireframe + Translucent Core
+              const coreGeo = new THREE.IcosahedronGeometry(4.2, 1);
+              const coreMat = new THREE.MeshPhongMaterial({
+                color: 0x4f46e5,
+                emissive: 0x2e1065,
+                specular: 0x38bdf8,
+                shininess: 90,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.35
+              });
+              const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+              group.add(coreMesh);
+
+              // Inner glowing solid crystal
+              const innerGeo = new THREE.OctahedronGeometry(2.4, 0);
+              const innerMat = new THREE.MeshPhongMaterial({
+                color: 0x9333ea,
+                emissive: 0x3b0764,
+                specular: 0xc084fc,
+                shininess: 100,
+                flatShading: true,
+                transparent: true,
+                opacity: 0.75
+              });
+              const innerMesh = new THREE.Mesh(innerGeo, innerMat);
+              group.add(innerMesh);
+
+              // Surrounding orbital floating satellites
+              const satellites = [];
+              const satGeo = new THREE.TetrahedronGeometry(0.7, 0);
+              const satMat = new THREE.MeshPhongMaterial({
+                color: 0x06b6d4,
+                emissive: 0x083344,
+                specular: 0x38bdf8,
+                shininess: 80,
+                flatShading: true
+              });
+
+              for (let i = 0; i < 18; i++) {
+                const mesh = new THREE.Mesh(satGeo, satMat);
+                const angle = (i / 18) * Math.PI * 2;
+                const radius = 6.5 + Math.sin(i * 1.5) * 2.2;
+                const y = (Math.random() - 0.5) * 6;
+                mesh.position.set(Math.cos(angle) * radius, y, Math.sin(angle) * radius);
+                mesh.userData = {
+                  angle: angle,
+                  radius: radius,
+                  speed: 0.006 + Math.random() * 0.008,
+                  rotSpeedX: Math.random() * 0.02,
+                  rotSpeedY: Math.random() * 0.02,
+                  yBase: y,
+                  yAmp: 0.5 + Math.random() * 0.6,
+                  seed: Math.random() * 10
+                };
+                group.add(mesh);
+                satellites.push(mesh);
+              }
+
+              // Subtle cosmic dust particles
+              const particleGeo = new THREE.BufferGeometry();
+              const particleCount = 140;
+              const positions = new Float32Array(particleCount * 3);
+              for (let i = 0; i < particleCount * 3; i += 3) {
+                positions[i] = (Math.random() - 0.5) * 35;
+                positions[i + 1] = (Math.random() - 0.5) * 30;
+                positions[i + 2] = (Math.random() - 0.5) * 25;
+              }
+              particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+              const particleMat = new THREE.PointsMaterial({
+                color: 0x38bdf8,
+                size: 0.12,
+                transparent: true,
+                opacity: 0.6
+              });
+              const particles = new THREE.Points(particleGeo, particleMat);
+              scene.add(particles);
+
+              // Mouse interaction
+              let mouseX = 0;
+              let mouseY = 0;
+              let targetX = 0;
+              let targetY = 0;
+
+              window.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+                mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+              });
+
+              const handleResize = () => {
+                const w = container.clientWidth || window.innerWidth;
+                const h = container.clientHeight || window.innerHeight;
+                camera.aspect = w / h;
+                camera.updateProjectionMatrix();
+                renderer.setSize(w, h);
+              };
+              window.addEventListener('resize', handleResize);
+
+              // Animation loop
+              let clock = 0;
+              function animate() {
+                requestAnimationFrame(animate);
+                clock += 0.015;
+
+                targetX += (mouseX * 0.8 - targetX) * 0.05;
+                targetY += (mouseY * 0.8 - targetY) * 0.05;
+
+                group.rotation.x = clock * 0.2 + targetY * 0.5;
+                group.rotation.y = clock * 0.25 + targetX * 0.6;
+                innerMesh.rotation.y = -clock * 0.4;
+                innerMesh.rotation.z = clock * 0.3;
+
+                satellites.forEach((sat) => {
+                  sat.userData.angle += sat.userData.speed;
+                  sat.position.x = Math.cos(sat.userData.angle) * sat.userData.radius;
+                  sat.position.z = Math.sin(sat.userData.angle) * sat.userData.radius;
+                  sat.position.y = sat.userData.yBase + Math.sin(clock + sat.userData.seed) * sat.userData.yAmp;
+                  sat.rotation.x += sat.userData.rotSpeedX;
+                  sat.rotation.y += sat.userData.rotSpeedY;
+                });
+
+                particles.rotation.y = clock * 0.04;
+
+                renderer.render(scene, camera);
+              }
+              animate();
+
+            })();
+          </script>
+        </div>
+        <!-- STITCH_THREEJS_END:ANIMATION_1 -->
+        <!-- Bioluminescent Ambient Radial Glow Spheres -->
+        <div
+          class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-gradient-to-tr from-primary/30 to-secondary/30 pointer-events-none anim-pulse-glow z-0">
+        </div>
+        <div class="absolute top-1/3 -left-20 w-80 h-80 rounded-full bg-secondary/15 pointer-events-none blur-3xl z-0">
+        </div>
+        <div
+          class="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-primary-container/20 pointer-events-none blur-3xl z-0">
+        </div>
+        <div class="relative z-10 max-w-5xl w-full mx-auto flex flex-col items-center text-center">
+          <!-- Eyebrow Pill Badge -->
+          <div
+            class="inline-flex items-center gap-space-sm px-space-md py-1.5 rounded-full bg-surface-container-high/70 backdrop-blur-md shadow-[0_0_18px_rgba(183,109,255,0.25)] mb-space-lg">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-80"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+            </span>
+            <span class="font-label-caps text-label-caps tracking-widest text-secondary font-semibold uppercase">
+              MCA STUDENT • FRONT-END DEVELOPER • DIGITAL CREATOR
+            </span>
+          </div>
+          <!-- Main Display Headline -->
+          <h1
+            class="font-display-hero text-headline-lg-mobile md:text-display-hero tracking-tight text-on-surface mb-space-md">
+            Hi, I'm <span
+              class="bg-gradient-to-r from-primary via-tertiary to-secondary bg-clip-text text-transparent">Harsh
+              Kumar</span>.
+          </h1>
+          <!-- Subheadline -->
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-space-xl">
+            Crafting weightless digital interfaces, scalable web applications, and AI-accelerated multimedia experiences
+            with surgical precision.
+          </p>
+          <!-- Action Buttons & Social Hub -->
+          <div class="flex flex-wrap items-center justify-center gap-space-md mb-space-xl">
+            <!-- Primary Kinetic Glow Button -->
+            <a class="group relative inline-flex items-center gap-space-sm px-space-lg py-3 rounded-full bg-gradient-to-r from-primary-container via-tertiary-container to-secondary-container text-on-primary font-headline-sm text-body-md shadow-[0_0_30px_rgba(183,109,255,0.45)] hover:shadow-[0_0_40px_rgba(123,208,255,0.6)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300"
+              href="Harsh_Kumar_Resume.pdf" download="Harsh_Kumar_Resume.pdf">
+              <span
+                class="material-symbols-outlined text-[20px] transition-transform duration-300 group-hover:translate-y-0.5">download</span>
+              <span class="font-bold tracking-wide">Download Resume</span>
+            </a>
+            <!-- Floating Glassmorphic Social Badges -->
+            <div class="flex items-center gap-space-xs p-1 rounded-full bg-surface-container-low/80 backdrop-blur-lg">
+              <!-- LinkedIn -->
+              <a aria-label="LinkedIn Profile"
+                class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-all duration-300 group"
+                href="https://www.linkedin.com/in/harshkumar0a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                rel="noopener noreferrer" target="_blank">
+                <svg class="w-5 h-5 fill-current transition-transform group-hover:scale-110" viewbox="0 0 24 24">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c.92 0 1.66-.74 1.66-1.66A1.67 1.67 0 0 0 6.46 5.4a1.67 1.67 0 0 0-1.66 1.7c0 .92.74 1.66 1.66 1.66m1.4 9.74v-8.37H5.06v8.37h2.8z">
+                  </path>
+                </svg>
+              </a>
+              <!-- GitHub -->
+              <a aria-label="GitHub Profile"
+                class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-300 group"
+                href="https://github.com/Harshkumar0a" rel="noopener noreferrer" target="_blank">
+                <svg class="w-5 h-5 fill-current transition-transform group-hover:scale-110" viewbox="0 0 24 24">
+                  <path clip-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"
+                    fill-rule="evenodd"></path>
+                </svg>
+              </a>
+              <!-- Email Direct Copy / Link -->
+              <div class="relative flex items-center">
+                <a class="px-space-md py-2 rounded-full flex items-center gap-space-xs text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-all duration-300 font-code-badge text-code-badge group"
+                  href="mailto:Harshkumar0a@gmail.com">
+                  <span class="material-symbols-outlined text-[18px] text-secondary">mail</span>
+                  <span>Harshkumar0a@gmail.com</span>
+                </a>
+                <button class="p-2 ml-0.5 rounded-full text-on-surface-variant hover:text-primary transition-colors"
+                  id="copyEmailHeroBtn"
+                  onclick="navigator.clipboard.writeText('Harshkumar0a@gmail.com'); alert('Copied to clipboard: Harshkumar0a@gmail.com');"
+                  title="Copy Email">
+                  <span class="material-symbols-outlined text-[16px]">content_copy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Quick Floating Metrics Ribbon (Levitating Glass Cards) -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md w-full max-w-4xl">
+            <div class="glass-card rounded-xl p-space-md flex items-center gap-space-md anim-float-slow">
+              <div
+                class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary shrink-0 shadow-inner">
+                <span class="material-symbols-outlined text-[24px]">rocket_launch</span>
+              </div>
+              <div class="text-left">
+                <div class="font-headline-sm text-headline-sm text-on-surface font-bold">5+ Projects</div>
+                <div class="font-code-badge text-code-badge text-on-surface-variant">Production Deployed</div>
+              </div>
+            </div>
+            <div class="glass-card rounded-xl p-space-md flex items-center gap-space-md anim-float-rev">
+              <div
+                class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary shrink-0 shadow-inner">
+                <span class="material-symbols-outlined text-[24px]">verified</span>
+              </div>
+              <div class="text-left">
+                <div class="font-headline-sm text-headline-sm text-on-surface font-bold">100% Focused</div>
+                <div class="font-code-badge text-code-badge text-on-surface-variant">Craft &amp; Architecture</div>
+              </div>
+            </div>
+            <div class="glass-card rounded-xl p-space-md flex items-center gap-space-md anim-float-slow">
+              <div
+                class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary shrink-0 shadow-inner">
+                <span class="material-symbols-outlined text-[24px]">smart_toy</span>
+              </div>
+              <div class="text-left">
+                <div class="font-headline-sm text-headline-sm text-on-surface font-bold">AI-First</div>
+                <div class="font-code-badge text-code-badge text-on-surface-variant">Accelerated Pipelines</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ==================== 01 // ABOUT ME ==================== -->
+      <section class="relative w-full max-w-7xl mx-auto px-space-gutter py-space-xl z-10 scroll-mt-24" id="about">
+        <!-- Section Marker -->
+        <div class="flex items-center gap-space-sm mb-space-lg">
+          <span class="font-code-badge text-label-caps text-primary tracking-widest uppercase">01 //</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">About Me</h2>
+          <div class="h-[1px] flex-1 bg-surface-variant ml-space-md"></div>
+        </div>
+        <!-- Bento Grid Split -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+          <!-- Left Bento: Professional Narrative -->
+          <div
+            class="lg:col-span-7 glass-card rounded-xl p-space-xl flex flex-col justify-between relative overflow-hidden group">
+            <div
+              class="absolute -right-16 -top-16 w-60 h-60 bg-primary/10 rounded-full blur-3xl pointer-events-none group-hover:bg-primary/20 transition-all duration-500">
+            </div>
+            <div>
+              <div
+                class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-highest text-primary font-code-badge text-code-badge mb-space-md">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+                <span>Trajectory &amp; Vision</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-space-md leading-snug">
+                Building at the intersection of robust code, operational scale, and generative intelligence.
+              </h3>
+              <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-space-lg">
+                Driven tech enthusiast transitioning from building successful independent ventures from the ground up to
+                a long-term corporate career. I blend technical coding skills with operational business management and
+                AI-assisted content creation.
+              </p>
+            </div>
+            <!-- Narrative Pillar Tags -->
+            <div class="flex flex-wrap gap-space-sm pt-space-md">
+              <div
+                class="px-space-md py-1.5 rounded-full bg-surface-container-high text-secondary font-code-badge text-code-badge flex items-center gap-space-xs">
+                <span class="material-symbols-outlined text-[16px]">account_tree</span>
+                <span>System Architecture</span>
+              </div>
+              <div
+                class="px-space-md py-1.5 rounded-full bg-surface-container-high text-primary font-code-badge text-code-badge flex items-center gap-space-xs">
+                <span class="material-symbols-outlined text-[16px]">bolt</span>
+                <span>Zero-to-One Mindset</span>
+              </div>
+              <div
+                class="px-space-md py-1.5 rounded-full bg-surface-container-high text-tertiary font-code-badge text-code-badge flex items-center gap-space-xs">
+                <span class="material-symbols-outlined text-[16px]">all_inclusive</span>
+                <span>Full-Lifecycle Execution</span>
+              </div>
+            </div>
+          </div>
+          <!-- Right Bento: Interactive Console Advantage -->
+          <div class="lg:col-span-5 glass-card rounded-xl p-space-xl flex flex-col justify-between relative">
+            <!-- Terminal Bezel Top Bar -->
+            <div>
+              <div class="flex items-center justify-between pb-space-md mb-space-md border-b border-surface-variant">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-error/70 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-tertiary-container/70 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-secondary/70 inline-block"></span>
+                </div>
+                <span class="font-code-badge text-code-badge text-on-surface-variant">advantage.config.ts</span>
+              </div>
+              <div class="font-code-badge text-code-snippet space-y-space-md">
+                <!-- Academic Edge -->
+                <div class="p-space-md rounded-lg bg-surface-container-lowest/80">
+                  <div class="text-secondary font-semibold flex items-center gap-space-xs mb-1">
+                    <span class="material-symbols-outlined text-[16px]">school</span>
+                    <span>Academic Edge:</span>
+                  </div>
+                  <p class="text-on-surface font-body-md pl-6">Master of Computer Applications (MCA)</p>
+                </div>
+                <!-- Core Philosophy -->
+                <div class="p-space-md rounded-lg bg-surface-container-lowest/80">
+                  <div class="text-primary font-semibold flex items-center gap-space-xs mb-1">
+                    <span class="material-symbols-outlined text-[16px]">psychology</span>
+                    <span>Core Philosophy:</span>
+                  </div>
+                  <p class="text-on-surface font-body-md pl-6">Bridging business viability, aesthetic perfection, and
+                    cutting-edge AI pipelines.</p>
+                </div>
+                <!-- Status Indicator -->
+                <div class="p-space-md rounded-lg bg-surface-container-lowest/80">
+                  <div class="text-secondary-fixed-dim font-semibold flex items-center gap-space-xs mb-1">
+                    <span class="material-symbols-outlined text-[16px]">radio_button_checked</span>
+                    <span>Status:</span>
+                  </div>
+                  <p class="text-on-surface font-body-md pl-6 flex items-center gap-space-xs">
+                    <span>Ready for Corporate Impact &amp; Tech Leadership</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Verified Telemetry Footnote -->
+            <div
+              class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant font-code-badge text-label-caps">
+              <span>LATENCY: 12ms</span>
+              <span class="text-secondary">SYS_STATUS: OPTIMAL</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ==================== 02 // TECH STACK & CAPABILITIES ==================== -->
+      <section class="relative w-full max-w-7xl mx-auto px-space-gutter py-space-xl z-10 scroll-mt-24" id="skills">
+        <!-- Section Marker -->
+        <div class="flex items-center gap-space-sm mb-space-lg">
+          <span class="font-code-badge text-label-caps text-secondary tracking-widest uppercase">02 //</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Tech Stack &amp; Capabilities
+          </h2>
+          <div class="h-[1px] flex-1 bg-surface-variant ml-space-md"></div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+          <!-- Grid Zone 1: Programming & Architecture -->
+          <div class="glass-card rounded-xl p-space-xl flex flex-col">
+            <div class="flex items-center justify-between mb-space-lg">
+              <div class="flex items-center gap-space-sm">
+                <span class="w-8 h-8 rounded-lg bg-primary/20 text-primary flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">code</span>
+                </span>
+                <h3 class="font-headline-md text-headline-md text-on-surface">Programming &amp; Architecture</h3>
+              </div>
+              <span class="font-code-badge text-label-caps text-primary uppercase">Core Stack</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+              <!-- Skill Badge: HTML5 & Modern CSS -->
+              <div
+                class="p-space-md rounded-xl bg-surface-container-high/60 hover:-translate-y-2 hover:bg-surface-container-high transition-all duration-300 shadow-md group">
+                <div class="flex items-center gap-space-sm mb-space-xs">
+                  <div
+                    class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">css</span>
+                  </div>
+                  <span
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">HTML5
+                    &amp; CSS3</span>
+                </div>
+                <p class="font-code-badge text-code-badge text-on-surface-variant">Responsive Flexbox, CSS Grid,
+                  Tailwind CSS</p>
+              </div>
+              <!-- Skill Badge: JavaScript ESNext -->
+              <div
+                class="p-space-md rounded-xl bg-surface-container-high/60 hover:-translate-y-2 hover:bg-surface-container-high transition-all duration-300 shadow-md group">
+                <div class="flex items-center gap-space-sm mb-space-xs">
+                  <div
+                    class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">javascript</span>
+                  </div>
+                  <span
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors">JavaScript</span>
+                </div>
+                <p class="font-code-badge text-code-badge text-on-surface-variant">ESNext, Asynchronous I/O, DOM
+                  Engineering</p>
+              </div>
+              <!-- Skill Badge: React.js -->
+              <div
+                class="p-space-md rounded-xl bg-surface-container-high/60 hover:-translate-y-2 hover:bg-surface-container-high transition-all duration-300 shadow-md group">
+                <div class="flex items-center gap-space-sm mb-space-xs">
+                  <div
+                    class="w-8 h-8 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary group-hover:bg-secondary-container group-hover:text-on-secondary transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">developer_board</span>
+                  </div>
+                  <span
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors">React.js</span>
+                </div>
+                <p class="font-code-badge text-code-badge text-on-surface-variant">Hooks, Component State, SPA
+                  Navigation</p>
+              </div>
+              <!-- Skill Badge: Python -->
+              <div
+                class="p-space-md rounded-xl bg-surface-container-high/60 hover:-translate-y-2 hover:bg-surface-container-high transition-all duration-300 shadow-md group">
+                <div class="flex items-center gap-space-sm mb-space-xs">
+                  <div
+                    class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">terminal</span>
+                  </div>
+                  <span
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-tertiary transition-colors">Python</span>
+                </div>
+                <p class="font-code-badge text-code-badge text-on-surface-variant">Scripting, Automation, Data
+                  Extraction</p>
+              </div>
+              <!-- Skill Badge: Supabase -->
+              <div
+                class="sm:col-span-2 p-space-md rounded-xl bg-surface-container-high/60 hover:-translate-y-2 hover:bg-surface-container-high transition-all duration-300 shadow-md group">
+                <div class="flex items-center gap-space-sm mb-space-xs">
+                  <div
+                    class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">database</span>
+                  </div>
+                  <span
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Supabase
+                    Ecosystem</span>
+                </div>
+                <p class="font-code-badge text-code-badge text-on-surface-variant">PostgreSQL, Realtime Subscriptions,
+                  Row-Level Security, Auth Architecture</p>
+              </div>
+            </div>
+          </div>
+          <!-- Grid Zone 2: AI & Media Production -->
+          <div class="glass-card rounded-xl p-space-xl flex flex-col">
+            <div class="flex items-center justify-between mb-space-lg">
+              <div class="flex items-center gap-space-sm">
+                <span class="w-8 h-8 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+                </span>
+                <h3 class="font-headline-md text-headline-md text-on-surface">AI &amp; Media Production</h3>
+              </div>
+              <span class="font-code-badge text-label-caps text-secondary uppercase">Generative Edge</span>
+            </div>
+            <div class="space-y-space-md flex-1 flex flex-col justify-between">
+              <!-- AI Front-End Engineering -->
+              <div
+                class="p-space-md rounded-xl bg-surface-container-high/60 hover:-translate-y-2 hover:bg-surface-container-high transition-all duration-300 shadow-md flex items-center justify-between group">
+                <div class="flex items-center gap-space-md">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-[20px]">smart_toy</span>
+                  </div>
+                  <div>
+                    <h4 class="font-headline-sm text-headline-sm text-on-surface">AI Front-End Development</h4>
+                    <p class="font-code-badge text-code-badge text-on-surface-variant">Cursor, Copilot, LLM Autonomous
+                      Agents, Prompt Protocols</p>
+                  </div>
+                </div>
+                <span
+                  class="px-space-sm py-1 rounded-full bg-secondary/10 text-secondary font-code-badge text-label-caps">Advanced</span>
+              </div>
+              <!-- AI Image & Video Creation -->
+              <div
+                class="p-space-md rounded-xl bg-surface-container-high/60 hover:-translate-y-2 hover:bg-surface-container-high transition-all duration-300 shadow-md flex items-center justify-between group">
+                <div class="flex items-center gap-space-md">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-[20px]">palette</span>
+                  </div>
+                  <div>
+                    <h4 class="font-headline-sm text-headline-sm text-on-surface">AI Image &amp; Video Pipelines</h4>
+                    <p class="font-code-badge text-code-badge text-on-surface-variant">Midjourney, Stable Diffusion,
+                      Runway Gen-2 Synthetics</p>
+                  </div>
+                </div>
+                <span
+                  class="px-space-sm py-1 rounded-full bg-primary/10 text-primary font-code-badge text-label-caps">Creative</span>
+              </div>
+              <!-- Media Suites: CapCut & DaVinci Resolve -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-high/60 hover:-translate-y-2 hover:bg-surface-container-high transition-all duration-300 shadow-md">
+                  <div class="flex items-center gap-space-xs text-tertiary mb-1">
+                    <span class="material-symbols-outlined text-[18px]">movie</span>
+                    <span class="font-headline-sm text-headline-sm text-on-surface">CapCut</span>
+                  </div>
+                  <p class="font-code-badge text-code-badge text-on-surface-variant">High-retention cinematic
+                    micro-editing</p>
+                </div>
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-high/60 hover:-translate-y-2 hover:bg-surface-container-high transition-all duration-300 shadow-md">
+                  <div class="flex items-center gap-space-xs text-secondary mb-1">
+                    <span class="material-symbols-outlined text-[18px]">tune</span>
+                    <span class="font-headline-sm text-headline-sm text-on-surface">DaVinci Resolve</span>
+                  </div>
+                  <p class="font-code-badge text-code-badge text-on-surface-variant">Color grading &amp; acoustic
+                    post-production</p>
+                </div>
+              </div>
+              <!-- SEO & Algorithmic Growth -->
+              <div
+                class="p-space-md rounded-xl bg-surface-container-high/60 hover:-translate-y-2 hover:bg-surface-container-high transition-all duration-300 shadow-md flex items-center justify-between group">
+                <div class="flex items-center gap-space-md">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center text-primary-fixed group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-[20px]">trending_up</span>
+                  </div>
+                  <div>
+                    <h4 class="font-headline-sm text-headline-sm text-on-surface">SEO &amp; Algorithmic Growth</h4>
+                    <p class="font-code-badge text-code-badge text-on-surface-variant">Metadata structuring, indexing
+                      speed, organic traffic capture</p>
+                  </div>
+                </div>
+                <span
+                  class="px-space-sm py-1 rounded-full bg-primary-fixed/20 text-primary-fixed font-code-badge text-label-caps">Scale</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ==================== 03 // FEATURED WORK & CASE STUDIES ==================== -->
+      <section class="relative w-full max-w-7xl mx-auto px-space-gutter py-space-xl z-10 scroll-mt-24" id="projects">
+        <!-- Section Marker -->
+        <div class="flex items-center gap-space-sm mb-space-lg">
+          <span class="font-code-badge text-label-caps text-primary tracking-widest uppercase">03 //</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Featured Work &amp; Case Studies
+          </h2>
+          <div class="h-[1px] flex-1 bg-surface-variant ml-space-md"></div>
+        </div>
+        <!-- Bento Box Showcase -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+          <!-- Project 1: Women Safety Portal (Spans 7 cols) -->
+          <div
+            class="lg:col-span-7 glass-card rounded-xl p-space-xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-500 relative overflow-hidden">
+            <!-- Ambient Decorative Glow -->
+            <div
+              class="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-primary/15 blur-3xl pointer-events-none group-hover:bg-primary/25 transition-all duration-500">
+            </div>
+            <div>
+              <!-- Header Meta -->
+              <div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-md">
+                <span
+                  class="px-space-sm py-1 rounded-full bg-primary/10 text-primary font-code-badge text-label-caps font-semibold">
+                  Social Impact &amp; Web Platform
+                </span>
+                <span class="font-code-badge text-code-badge text-on-surface-variant flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-secondary"></span> Live Production
+                </span>
+              </div>
+              <h3
+                class="font-headline-md text-headline-md text-on-surface font-bold mb-space-xs group-hover:text-primary transition-colors">
+                Women Safety Portal
+              </h3>
+              <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-space-lg">
+                A purpose-driven web platform focused on women's safety with a user-centric design. Engineered for high
+                reliability during emergencies with zero unnecessary friction.
+              </p>
+              <!-- Key Feature Callouts -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm mb-space-lg">
+                <div class="p-space-sm rounded-lg bg-surface-container-high/60">
+                  <div class="flex items-center gap-space-xs text-error mb-1">
+                    <span class="material-symbols-outlined text-[18px]">crisis_alert</span>
+                    <span class="font-headline-sm text-body-md font-semibold text-on-surface">SOS Triggers</span>
+                  </div>
+                  <p class="font-code-badge text-label-caps text-on-surface-variant">Instant one-tap broadcast</p>
+                </div>
+                <div class="p-space-sm rounded-lg bg-surface-container-high/60">
+                  <div class="flex items-center gap-space-xs text-secondary mb-1">
+                    <span class="material-symbols-outlined text-[18px]">explore</span>
+                    <span class="font-headline-sm text-body-md font-semibold text-on-surface">Safe Routes</span>
+                  </div>
+                  <p class="font-code-badge text-label-caps text-on-surface-variant">Algorithmic waypoints</p>
+                </div>
+                <div class="p-space-sm rounded-lg bg-surface-container-high/60">
+                  <div class="flex items-center gap-space-xs text-tertiary mb-1">
+                    <span class="material-symbols-outlined text-[18px]">accessibility_new</span>
+                    <span class="font-headline-sm text-body-md font-semibold text-on-surface">Accessibility</span>
+                  </div>
+                  <p class="font-code-badge text-label-caps text-on-surface-variant">Sub-second responsive UI</p>
+                </div>
+              </div>
+              <!-- Visual Telemetry & Map Visualization -->
+              <div
+                class="w-full rounded-xl overflow-hidden bg-surface-container-lowest relative p-space-md mb-space-md shadow-inner">
+                <div
+                  class="flex items-center justify-between font-code-badge text-label-caps text-on-surface-variant mb-space-xs">
+                  <span class="flex items-center gap-1"><span
+                      class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span> TELEMETRY /
+                    GEOLOCATION_DISPATCH</span>
+                  <span>GEO-IP: LOCKED</span>
+                </div>
+                <!-- Interactive visual mock -->
+                <div
+                  class="h-32 w-full rounded-lg bg-gradient-to-br from-surface-container-high via-surface-container to-surface-container-lowest flex items-center justify-around px-space-md relative overflow-hidden">
+                  <div class="flex flex-col items-center">
+                    <span class="material-symbols-outlined text-secondary text-[28px] animate-bounce">location_on</span>
+                    <span class="font-code-badge text-label-caps text-on-surface">User Node</span>
+                  </div>
+                  <div class="flex-1 h-0.5 border-t border-dashed border-secondary/40 mx-4"></div>
+                  <div class="flex flex-col items-center">
+                    <span class="material-symbols-outlined text-primary text-[28px]">shield</span>
+                    <span class="font-code-badge text-label-caps text-on-surface">Emergency Hub</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Tech Stack Footnote & Action -->
+            <div
+              class="pt-space-md border-t border-surface-variant flex flex-wrap items-center justify-between gap-space-md">
+              <div class="flex flex-wrap gap-space-xs">
+                <span
+                  class="px-space-xs py-0.5 rounded bg-surface-variant text-primary font-code-badge text-code-badge">React</span>
+                <span
+                  class="px-space-xs py-0.5 rounded bg-surface-variant text-secondary font-code-badge text-code-badge">Supabase</span>
+                <span
+                  class="px-space-xs py-0.5 rounded bg-surface-variant text-on-surface-variant font-code-badge text-code-badge">Geolocation
+                  API</span>
+                <span
+                  class="px-space-xs py-0.5 rounded bg-surface-variant text-on-surface-variant font-code-badge text-code-badge">Tailwind
+                  CSS</span>
+              </div>
+              <a class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-full bg-surface-container-highest text-primary hover:bg-primary hover:text-on-primary font-code-badge text-code-badge font-semibold transition-all duration-300"
+                href="https://women-safety-system-frsq840jy-harsh-kumar-s-projects1.vercel.app/">
+                <span>Explore Live Platform</span>
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </a>
+            </div>
+          </div>
+          <!-- Project 2: Business Landing Pages (Spans 5 cols) -->
+          <div
+            class="lg:col-span-5 glass-card rounded-xl p-space-xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-500 relative overflow-hidden">
+            <!-- Ambient Decorative Glow -->
+            <div
+              class="absolute -left-20 -bottom-20 w-64 h-64 rounded-full bg-secondary/15 blur-3xl pointer-events-none group-hover:bg-secondary/25 transition-all duration-500">
+            </div>
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-md">
+                <span
+                  class="px-space-sm py-1 rounded-full bg-secondary/10 text-secondary font-code-badge text-label-caps font-semibold">
+                  Commercial Conversion
+                </span>
+                <span class="font-code-badge text-code-badge text-secondary-fixed-dim">Client Engagements</span>
+              </div>
+              <h3
+                class="font-headline-md text-headline-md text-on-surface font-bold mb-space-xs group-hover:text-secondary transition-colors">
+                High-Impact Business Sites
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-space-md">
+                Responsive, AI-assisted front-end sites built for consumer brands "Tinted Tint" and "Hungry Roadster" to
+                drive leads and sales.
+              </p>
+              <!-- Dual Brand Visual Sub-cards -->
+              <div class="space-y-space-sm mb-space-md">
+                <!-- Tinted Tint -->
+                <a href="https://www.tintedtint.com/" target="_blank" rel="noopener noreferrer"
+                  class="block p-space-md rounded-xl bg-surface-container-high/60 hover:bg-surface-container-high hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
+                  <div class="flex items-center justify-between mb-1">
+                    <span
+                      class="font-headline-sm text-body-md font-bold text-on-surface flex items-center gap-1 text-primary">Tinted
+                      Tint <span class="material-symbols-outlined text-[16px]">open_in_new</span></span>
+                    <span class="font-code-badge text-label-caps text-secondary">Automotive Luxury</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant">Automotive aesthetics &amp; frictionless
+                    lead capture engine for premium detailing.</p>
+                </a>
+                <!-- Hungry Roadster -->
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-high/60 hover:bg-surface-container-high transition-colors">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-headline-sm text-body-md font-bold text-on-surface">Hungry Roadster</span>
+                    <span class="font-code-badge text-label-caps text-primary">Culinary &amp; Mobility</span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant">High-conversion mobile storefront with
+                    streamlined digital ordering pathways.</p>
+                </div>
+              </div>
+              <!-- Conversion Stats Badge Bar -->
+              <div class="grid grid-cols-2 gap-space-sm mb-space-md">
+                <div class="p-space-sm rounded-lg bg-surface-container-lowest text-center">
+                  <div class="font-headline-md text-headline-md text-secondary font-bold">+45%</div>
+                  <div class="font-code-badge text-label-caps text-on-surface-variant">Conversion Boost</div>
+                </div>
+                <div class="p-space-sm rounded-lg bg-surface-container-lowest text-center">
+                  <div class="font-headline-md text-headline-md text-primary font-bold">&lt;0.8s</div>
+                  <div class="font-code-badge text-label-caps text-on-surface-variant">Page Speeds</div>
+                </div>
+              </div>
+            </div>
+            <!-- Action Button -->
+            <div class="pt-space-md border-t border-surface-variant flex items-center justify-end">
+              <a class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-full bg-surface-container-highest text-secondary hover:bg-secondary hover:text-on-secondary font-code-badge text-code-badge font-semibold transition-all duration-300"
+                href="#">
+                <span>View Case Studies</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ==================== 04 // DIGITAL CREATION & REACH ==================== -->
+      <section class="relative w-full max-w-7xl mx-auto px-space-gutter py-space-xl z-10 scroll-mt-24" id="content">
+        <!-- Section Marker -->
+        <div class="flex items-center gap-space-sm mb-space-lg">
+          <span class="font-code-badge text-label-caps text-secondary tracking-widest uppercase">04 //</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Digital Creation &amp; Reach</h2>
+          <div class="h-[1px] flex-1 bg-surface-variant ml-space-md"></div>
+        </div>
+        <div class="glass-card rounded-xl p-space-xl relative overflow-hidden">
+          <!-- Subtle Neon Scrim -->
+          <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+            <!-- Left: YouTube Channel Intelligence -->
+            <div class="lg:col-span-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-space-sm mb-space-md">
+                  <div
+                    class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-error-container/40 text-on-error-container font-code-badge text-code-badge font-bold">
+                    <span class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></span>
+                    <span>YOUTUBE CHANNEL</span>
+                  </div>
+                  <span class="font-code-badge text-code-badge text-on-surface-variant">@HarshGupta_yt</span>
+                </div>
+                <h3 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface font-bold mb-space-sm">
+                  Self-Improvement & Growth Engine
+                </h3>
+                <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-space-lg">
+                  A dedicated self-improvement channel focused on personal growth, productivity, and mindset. Leveraging
+                  advanced video production tools and targeted SEO to build a highly engaged community..
+                </p>
+                <!-- Metrics Chips -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm mb-space-xl">
+                  <div class="p-space-sm rounded-lg bg-surface-container-high/60">
+                    <div class="text-primary font-headline-sm text-body-md font-bold mb-0.5">AI-Driven</div>
+                    <div class="font-code-badge text-label-caps text-on-surface-variant">Automated Workflows</div>
+                  </div>
+                  <div class="p-space-sm rounded-lg bg-surface-container-high/60">
+                    <div class="text-secondary font-headline-sm text-body-md font-bold mb-0.5">Algorithmic</div>
+                    <div class="font-code-badge text-label-caps text-on-surface-variant">High Retention</div>
+                  </div>
+                  <div class="p-space-sm rounded-lg bg-surface-container-high/60">
+                    <div class="text-tertiary font-headline-sm text-body-md font-bold mb-0.5">Data-Backed</div>
+                    <div class="font-code-badge text-label-caps text-on-surface-variant">SEO Rank Tactics</div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <a class="inline-flex items-center gap-space-sm px-space-lg py-3 rounded-full bg-surface-container-highest text-on-surface hover:text-secondary hover:bg-surface-variant font-code-badge text-code-badge font-bold transition-all duration-300"
+                  href="https://www.youtube.com/channel/UCIj1Lh4hc3UAdBqFIiSV__Q" rel="noopener noreferrer"
+                  target="_blank">
+                  <span class="material-symbols-outlined text-error text-[20px]">smart_display</span>
+                  <span>Visit @HarshGupta_yt Channel</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+                </a>
+              </div>
+            </div>
+            <!-- Right: Futuristic Media Player Interactive Mockup -->
+            <div class="lg:col-span-6">
+              <div class="rounded-xl bg-surface-container-lowest p-space-md shadow-2xl relative group overflow-hidden">
+                <!-- Video Mock Canvas with placeholder and data-alt -->
+                <div
+                  class="relative w-full aspect-video rounded-lg overflow-hidden bg-surface-container-high flex flex-col justify-between p-space-md">
+                  <div
+                    class="absolute inset-0 bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700"
+                    data-alt="Futuristic holographic workspace preview showing artificial intelligence lines of code and modern web design mockups in vibrant purple and cyan bioluminescent ambient lighting on deep obsidian background"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmt_eLGcLuyMuA7lmBweBECVFuLg7KwoRcEOyeEDNK4o1e9VpuOzYBS3G4d1Z_RWu1xW-OniVhKqNFIAqXDQJqKfxbA1Ckxs0QUww8cmQ2z87dda8g-EkzxMIIH160vYYHB7c1iK3W_lCO-9f6yoTrDyt7OLjEUMzqztImjjF9dBoq08SpFfgMKJNJMl0qGzGqE-MdoRBsajuug6DbO0XAPrC-yj8npzutT8ayx80DQrpJe0Y_84Wd')">
+                  </div>
+                  <!-- Top Scrim Overlay -->
+                  <div class="relative z-10 flex items-center justify-between">
+                    <span
+                      class="px-space-sm py-1 rounded bg-surface-container-lowest/80 backdrop-blur-md font-code-badge text-label-caps text-secondary font-semibold">
+                      4K 60FPS • AI PIPELINE
+                    </span>
+                    <span class="material-symbols-outlined text-on-surface-variant text-[20px]">cast</span>
+                  </div>
+                  <!-- Center Interactive Play Button with Pulse Aura -->
+                  <div class="relative z-10 self-center">
+                    <button aria-label="Play sample video preview"
+                      class="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-on-primary shadow-[0_0_30px_rgba(183,109,255,0.6)] group-hover:scale-110 transition-transform duration-300">
+                      <span class="material-symbols-outlined text-[32px] ml-1">play_arrow</span>
+                    </button>
+                  </div>
+                  <!-- Bottom Overlay Controls & Scrubber -->
+                  <div class="relative z-10 space-y-space-xs">
+                    <div
+                      class="flex items-center justify-between text-on-surface font-code-badge text-label-caps drop-shadow">
+                      <span>How AI is Revolutionizing Modern Web Development</span>
+                      <span>14:20 / 18:45</span>
+                    </div>
+                    <!-- Interactive Timeline Scrubber -->
+                    <div class="w-full h-1.5 bg-white/20 rounded-full overflow-hidden cursor-pointer">
+                      <div class="h-full bg-gradient-to-r from-primary to-secondary w-3/4 rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Waveform Sound Dynamics visualization -->
+                <div
+                  class="mt-space-md pt-space-xs flex items-center justify-between font-code-badge text-label-caps text-on-surface-variant">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-1 h-3 bg-secondary rounded-full animate-pulse"></span>
+                    <span class="w-1 h-5 bg-primary rounded-full animate-pulse"></span>
+                    <span class="w-1 h-2 bg-secondary rounded-full animate-pulse"></span>
+                    <span class="w-1 h-6 bg-tertiary rounded-full animate-pulse"></span>
+                    <span class="w-1 h-4 bg-secondary rounded-full animate-pulse"></span>
+                    <span class="w-1 h-3 bg-primary rounded-full animate-pulse"></span>
+                    <span class="ml-2">AUDIO DYNAMICS: MASTERED</span>
+                  </div>
+                  <span>COMPRESSION: 1.4:1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ==================== 05 // GET IN TOUCH ==================== -->
+      <section class="relative w-full max-w-7xl mx-auto px-space-gutter py-space-xl z-10 scroll-mt-24" id="contact">
+        <!-- Section Marker -->
+        <div class="flex items-center gap-space-sm mb-space-lg">
+          <span class="font-code-badge text-label-caps text-primary tracking-widest uppercase">05 //</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Get In Touch</h2>
+          <div class="h-[1px] flex-1 bg-surface-variant ml-space-md"></div>
+        </div>
+        <!-- Floating Glass Contact Console -->
+        <div class="glass-card rounded-xl p-space-xl relative overflow-hidden text-center max-w-4xl mx-auto">
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-secondary/5 pointer-events-none">
+          </div>
+          <div class="relative z-10 flex flex-col items-center">
+            <!-- Floating Beacon Icon -->
+            <div
+              class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-space-md shadow-[0_0_30px_rgba(183,109,255,0.3)]">
+              <span class="material-symbols-outlined text-[32px]">send</span>
+            </div>
+            <h3 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface font-bold mb-space-xs">
+              Let's build something extraordinary together.
+            </h3>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-space-xl">
+              Available for corporate roles, architectural engineering challenges, and technical leadership
+              opportunities.
+            </p>
+            <!-- Direct Contact Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md w-full max-w-2xl mb-space-xl">
+              <!-- Email Target -->
+              <div
+                class="p-space-lg rounded-xl bg-surface-container-high/60 flex flex-col items-center text-center group hover:bg-surface-container-high transition-colors">
+                <span class="material-symbols-outlined text-secondary text-[28px] mb-space-xs">alternate_email</span>
+                <span class="font-code-badge text-label-caps text-on-surface-variant uppercase mb-1">Direct Email</span>
+                <a class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors mb-space-sm"
+                  href="mailto:Harshkumar0a@gmail.com">
+                  Harshkumar0a@gmail.com
+                </a>
+                <button
+                  class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant hover:text-primary font-code-badge text-code-badge transition-colors"
+                  onclick="navigator.clipboard.writeText('Harshkumar0a@gmail.com'); alert('Email address copied!');">
+                  <span class="material-symbols-outlined text-[16px]">content_copy</span>
+                  <span>Copy Address</span>
+                </button>
+              </div>
+              <!-- Phone Target -->
+              <div
+                class="p-space-lg rounded-xl bg-surface-container-high/60 flex flex-col items-center text-center group hover:bg-surface-container-high transition-colors">
+                <span class="material-symbols-outlined text-primary text-[28px] mb-space-xs">phone_iphone</span>
+                <span class="font-code-badge text-label-caps text-on-surface-variant uppercase mb-1">Direct Phone</span>
+                <a class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mb-space-sm"
+                  href="tel:+917827595326">
+                  +91-7827595326
+                </a>
+                <a class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant hover:text-secondary font-code-badge text-code-badge transition-colors"
+                  href="tel:+917827595326">
+                  <span class="material-symbols-outlined text-[16px]">call</span>
+                  <span>Place Call</span>
+                </a>
+              </div>
+            </div>
+            <!-- Floating Social Links Strip -->
+            <div
+              class="flex flex-wrap items-center justify-center gap-space-md pt-space-md border-t border-surface-variant w-full">
+              <a class="px-space-md py-2 rounded-full bg-surface-container-low hover:bg-surface-container-highest text-on-surface-variant hover:text-secondary font-code-badge text-code-badge flex items-center gap-space-xs transition-colors"
+                href="https://www.linkedin.com/in/harshkumar0a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                rel="noopener noreferrer" target="_blank">
+                <span>LinkedIn</span>
+                <span class="material-symbols-outlined text-[14px]">north_east</span>
+              </a>
+              <a class="px-space-md py-2 rounded-full bg-surface-container-low hover:bg-surface-container-highest text-on-surface-variant hover:text-primary font-code-badge text-code-badge flex items-center gap-space-xs transition-colors"
+                href="https://github.com/Harshkumar0a" rel="noopener noreferrer" target="_blank">
+                <span>GitHub</span>
+                <span class="material-symbols-outlined text-[14px]">north_east</span>
+              </a>
+              <a class="px-space-md py-2 rounded-full bg-surface-container-low hover:bg-surface-container-highest text-on-surface-variant hover:text-tertiary font-code-badge text-code-badge flex items-center gap-space-xs transition-colors"
+                href="https://www.youtube.com/channel/UCIj1Lh4hc3UAdBqFIiSV__Q" rel="noopener noreferrer"
+                target="_blank">
+                <span>YouTube</span>
+                <span class="material-symbols-outlined text-[14px]">north_east</span>
+              </a>
+              <a class="px-space-md py-2 rounded-full bg-surface-container-low hover:bg-surface-container-highest text-on-surface-variant hover:text-secondary font-code-badge text-code-badge flex items-center gap-space-xs transition-colors"
+                href="https://www.instagram.com/harshgupta__ig/" rel="noopener noreferrer" target="_blank">
+                <span>Instagram</span>
+                <span class="material-symbols-outlined text-[14px]">north_east</span>
+              </a>
+            </div>
+            <!-- Section Signature Subtext -->
+            <p class="font-code-badge text-label-caps text-on-surface-variant mt-space-lg">
+              © Harsh Kumar. Engineered with Anti-Gravity motion &amp; precision code.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- ==================== MICRO-INTERACTION SCRIPT ==================== -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          // Magnetic interactive tilt & spotlight reflection on hover
+          const cards = document.querySelectorAll('.glass-card');
+          cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+              const rect = card.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              card.style.setProperty('--mouse-x', `${x}px`);
+              card.style.setProperty('--mouse-y', `${y}px`);
+            });
+          });
+
+          // Smooth scroll navigation anchors
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+              const targetId = this.getAttribute('href');
+              if (targetId && targetId !== '#') {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                  e.preventDefault();
+                  targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }
+              }
+            });
+          });
+        });
+      </script>
+    </div>
+  </main>
+  <footer
+    class="w-full bg-surface-container-lowest/80 backdrop-blur-2xl border-t border-white/5 relative z-20 mt-space-xl">
+    <div class="max-w-7xl mx-auto px-space-gutter py-space-xl">
+      <div
+        class="flex flex-col md:flex-row items-center justify-between gap-space-lg pb-space-lg border-b border-white/5">
+        <div class="flex flex-col items-center md:items-start gap-space-xs">
+          <div class="flex items-center gap-space-sm">
+            <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center"><span
+                class="font-code-badge text-label-caps font-bold text-on-primary">HK</span></div><span
+              class="font-headline-sm text-headline-sm text-on-surface font-semibold">Harsh Kumar</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left max-w-sm">Engineering
+            scalable high-performance web systems and weightless interactive experiences.</p>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-space-md">
+          <div
+            class="flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-low border border-white/5">
+            <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span
+              class="font-code-badge text-code-badge text-on-surface-variant">System: Operational</span>
+          </div>
+          <div
+            class="flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-low border border-white/5">
+            <span class="material-symbols-outlined text-primary text-[16px]">schedule</span><span
+              class="font-code-badge text-code-badge text-on-surface-variant">UTC+05:30</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-lg">
+        <p class="font-code-badge text-code-badge text-on-surface-variant">© 2025 Harsh Kumar. Designed with technical
+          precision.</p>
+        <div class="flex items-center gap-space-lg"><a
+            class="font-code-badge text-code-badge text-on-surface-variant hover:text-primary transition-colors"
+            data-path="about" href="#about">Arch</a><a
+            class="font-code-badge text-code-badge text-on-surface-variant hover:text-primary transition-colors"
+            data-path="skills" href="#skills">Stack</a><a
+            class="font-code-badge text-code-badge text-on-surface-variant hover:text-primary transition-colors"
+            data-path="projects" href="#projects">Works</a><a
+            class="font-code-badge text-code-badge text-on-surface-variant hover:text-primary transition-colors"
+            data-path="contact" href="#contact">Terminal</a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
